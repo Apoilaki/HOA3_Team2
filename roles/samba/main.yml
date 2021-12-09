@@ -1,0 +1,11 @@
+---
+#Installing Samba Ubuntu
+- hosts: all
+  become: true
+  tasks:
+- name : Install Samba packages
+  package:
+    name: "{{ samba_packages }}"
+    state: present
+
+- name Install Samba packages
