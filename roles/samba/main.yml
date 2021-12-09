@@ -4,8 +4,11 @@
   become: true
   tasks:
 - name : Install Samba packages
-  package:
+  apt:
     name: "{{ samba_packages }}"
     state: present
 
 - name Install Samba packages
+  dnf: 
+    name: "{{ samba_packages }}"
+    state: present
