@@ -22,7 +22,7 @@
     when: ansible_distribution == "Ubuntu"
 
   - name: Install Mariadb
-    apt:
+    dnf:
       name: mariadb-server
       state: present
     when: ansible_distribution == "CentOS"
