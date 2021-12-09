@@ -3,15 +3,15 @@
 - hosts: all
   become: true
   tasks:
-- name : Install Samba packages
-  apt:
-    name: "{{ samba_packages }}"
-    state: present
-  when: ansible_distribution == "Ubuntu"
+  - name: Install Samba packages
+    apt:
+      name: samba
+      state: present
+    when: ansible_distribution == "Ubuntu"
 
 #Installing Samba Centos
-- name Install Samba packages
-  dnf: 
-    name: "{{ samba_packages }}"
-    state: present
-  when: ansible_distribution == "Centos"
+  - name: Install Samba packages
+    dnf: 
+      name: samba
+      state: present
+    when: ansible_distribution == "Centos"
