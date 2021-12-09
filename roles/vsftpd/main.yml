@@ -2,14 +2,11 @@
 - hosts: all
   become: true
   tasks: 
-  - name: update repository index
+  - name: Install vsftpd
     apt:
-      update_cache: yes
-  - name: Install DHCP
-    apt:
-      name: DHCP
-    when: ansible Distribution == "Ubuntu"
+      name: vsftpd
+    when: ansible_distribution == "Ubuntu"
   - name: Install vsftpd
     yum:
       name: vsftpd
-    when: ansible Distribution == "CentOs"
+    when: ansible_distribution == "CentOs"
