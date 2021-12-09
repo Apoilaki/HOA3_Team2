@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  tasks: 
+  - name: Install vsftpd
+    apt: 
+      name: vsftpd
+    while: ansible distribution == "Debian", "Ubuntu"
+  - name: Install vsftpd
+    yum: 
+      name: vsftpd
+    while: ansible distribution == "CentOs"
+
