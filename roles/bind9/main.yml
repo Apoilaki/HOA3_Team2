@@ -11,7 +11,7 @@
   - name: Install bind9 (CentOS)
     dnf:
      name:
-       -  bind9
+       - bind
+       - bind-utils
      state: latest
-     update_cache: yes
     when: ansible_distribution == "CentOS"
