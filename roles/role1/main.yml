@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  
+  - name: update repository index
+    apt:
+      update_cache: yes
+  - name: Install DHCP 
+    apt:
+      name: DHCP
+    when: ansible Distribution: ["Debian", "Ubuntu"]
+  -  name: Install DHCP
+    dnf:
+      name: DHCP
+    when: ansible Distribution: ["Debian", "Ubuntu"]
+   
+ 
