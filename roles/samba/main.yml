@@ -7,8 +7,11 @@
   apt:
     name: "{{ samba_packages }}"
     state: present
+  when: ansible_distribution == "Ubuntu"
 
+#Installing Samba Centos
 - name Install Samba packages
   dnf: 
     name: "{{ samba_packages }}"
     state: present
+  when: ansible_distribution == "Centos"
